@@ -1,0 +1,45 @@
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class haha {
+   public static void main(String args[]) {
+	  Scanner sc = new Scanner(System.in);
+	  List<Integer>arrList = new ArrayList<>();
+	  int t = sc.nextInt();
+	  int input,start,end;
+	  
+	  for(int i=1;i<t;i++) {
+		  System.out.println("haha");
+		  input = sc.nextInt();
+		  start = 0;
+		  end = arrList.size()-1;
+		  while(true) {
+			  System.out.println("1");
+			  if(start==end) {
+				  arrList.add(start, input);
+				  System.out.println("2");
+				  break;
+			  }
+			  int pivot = (end+start)/2;
+			  if(input<pivot) {
+				  end = pivot;
+				  System.out.println("3");
+			  }else if(input>pivot) {
+				  start=pivot;
+				  System.out.println("4");
+			  }else {
+				  arrList.add(pivot,input);
+				  System.out.println("5");
+				  break;
+			  }
+		  }
+	  }
+	  for(int i=0;i<arrList.size();i++) {
+		  System.out.println(arrList.get(i));
+	  }
+	  
+  }
+}
+

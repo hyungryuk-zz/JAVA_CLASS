@@ -1,0 +1,24 @@
+package VO;
+
+public class StudentVO {
+	private String s_name;
+	private String s_id;
+	private String s_major;
+	public StudentVO(String s_name, String s_id, String s_major) {
+		this.s_name = s_name;
+		this.s_id = s_id;
+		this.s_major = s_major;
+	}
+	public StudentVO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "StudentVO [s_name=" + s_name + ", s_id=" + s_id + ", s_major=" + s_major + "]";
+	}
+	
+	
+	
+	
+}

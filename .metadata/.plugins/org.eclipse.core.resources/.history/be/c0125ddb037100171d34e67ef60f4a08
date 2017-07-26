@@ -1,0 +1,12 @@
+package myspring.di.xml.test;
+
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+@RunWith(SpringJUnit4ClassRunner.class)	//스프링이 Junit을 확장해서 실행한다는 의미이다
+@ContextConfiguration(locations="classpath:config/beans.xml")
+public class HelloBeanSpringTest {
+	
+	
+}

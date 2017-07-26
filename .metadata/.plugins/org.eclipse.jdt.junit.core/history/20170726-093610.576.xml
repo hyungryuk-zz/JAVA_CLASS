@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="HelloBeanSpringTest" project="Spring4Prj" tests="4" started="4" failures="0" errors="0" ignored="3">
+  <testsuite name="myspring.di.xml.test.HelloBeanSpringTest" time="0.234">
+    <testcase name="collection" classname="myspring.di.xml.test.HelloBeanSpringTest" time="0.0" ignored="true"/>
+    <testcase name="constructor" classname="myspring.di.xml.test.HelloBeanSpringTest" time="0.188" ignored="true"/>
+    <testcase name="setCollection" classname="myspring.di.xml.test.HelloBeanSpringTest" time="0.046"/>
+    <testcase name="bean1" classname="myspring.di.xml.test.HelloBeanSpringTest" time="0.0" ignored="true"/>
+  </testsuite>
+</testrun>

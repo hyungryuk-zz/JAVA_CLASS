@@ -1,0 +1,3 @@
+<%@page pageEncoding = "UTF-8" %>
+<h1>현재날짜 : <%=LocalDate.now() %></h1>
+<img alt="IU" src="Images/IU.JPG"><br>

@@ -1,0 +1,4 @@
+<%@page pageEncoding = "UTF-8" %>
+<h1>현재날짜 : <%=LocalDate.now() %></h1>
+<h1>아이유의 학번은 : ${param.s_id}</h1>
+<img alt="IU" src="Images/IU.JPG"><br>

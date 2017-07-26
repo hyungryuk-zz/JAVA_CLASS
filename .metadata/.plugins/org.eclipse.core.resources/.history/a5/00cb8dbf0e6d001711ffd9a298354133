@@ -1,0 +1,22 @@
+package lambdasinaction.dateapi;
+
+import java.time.LocalDate;
+
+public class MyLocalDate {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		LocalDate today = LocalDate.now();
+		System.out.println(today);
+		
+		LocalDate today2 = LocalDate.now();
+		System.out.println(today.compareTo((today2))==0);
+		
+		System.out.println("³â" + today.getYear());
+		System.out.println("¿ù:" + today.getMonthValue() + " " +today.getMonth());
+		System.out.println("ÀÏ" + today.getDayOfMonth());
+		
+	}
+
+}

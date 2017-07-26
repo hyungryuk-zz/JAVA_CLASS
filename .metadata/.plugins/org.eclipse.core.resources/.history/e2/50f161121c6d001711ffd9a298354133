@@ -1,0 +1,22 @@
+package lambdasinaction.dateapi;
+
+import java.time.LocalDate;
+import java.time.temporal.Temporal;
+import java.time.temporal.TemporalAdjuster;
+
+public class TheDayOfMartOff {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LocalDate today = LocalDate.now();
+		LocalDate dayofMartoff = today.with(new TemporalAdjuster() {
+			
+			@Override
+			public Temporal adjustInto(Temporal temporal) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+		});
+	}
+
+}

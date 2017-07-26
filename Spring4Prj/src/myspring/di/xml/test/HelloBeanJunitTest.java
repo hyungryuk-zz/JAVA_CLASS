@@ -1,0 +1,49 @@
+package myspring.di.xml.test;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+import myspring.di.xml.Hello;
+import myspring.di.xml.Printer;
+
+public class HelloBeanJunitTest {
+	BeanFactory factory;
+
+	@Before
+	public void init() {
+		factory = new GenericXmlApplicationContext("config/beans.xml");
+
+	}
+
+	@Test @Ignore
+	public void bean1() {
+		Hello hello = (Hello) factory.getBean("hello");
+
+		Hello hello2 = factory.getBean("hello", Hello.class);
+
+		Assert.assertSame(hello, hello2);
+
+		Assert.assertEquals("Hello ±èÇü·ú", hello.sayHello());
+
+		hello.print();
+
+		Printer printer = factory.getBean("printer", Printer.class);
+
+		printer.toString();
+
+		Assert.assertEquals("Hello ±èÇü·ú", printer.toString());		
+
+	}
+	
+	@Test
+	public void bean2() {
+		Hello hello = factory.getBean("hello2", Hello.class);		
+		Assert.assertEquals("Hello ±æµ¿¾Æ", hello.sayHello());
+		hello.print();
+	}
+
+}

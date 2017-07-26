@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>학생정보 입력화면</title>
+</head>
+<body>
+	<h1>학생 정보 입력</h1>
+	<form method="GET" action="">
+	
+	</form>
+</body>
+</html>

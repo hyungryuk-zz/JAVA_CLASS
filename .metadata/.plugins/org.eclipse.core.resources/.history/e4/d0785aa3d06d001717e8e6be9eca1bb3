@@ -1,0 +1,24 @@
+import java.util.PriorityQueue;
+import java.util.Scanner;
+
+public class haha {
+   public static void main(String args[]) {
+	  PriorityQueue <Integer> pq = new PriorityQueue<>();
+	  int t;
+	  Scanner sc = new Scanner(System.in);
+	  t= sc.nextInt();
+	  
+	  for(int i=0;i<t;i++) {
+		  pq.add(sc.nextInt());	  
+	  }
+	  int size = arrList.size();
+	  while(size-- >0 ) {
+		  
+		  System.out.println(pq.peek());
+		  pq.remove();
+	  }
+	  
+	  
+  }
+}
+

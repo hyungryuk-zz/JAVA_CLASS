@@ -1,0 +1,6 @@
+package myspring.di.annotation;
+
+@Component
+public interface Printer {
+	public void print(String message);
+}

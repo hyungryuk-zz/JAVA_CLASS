@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class haha {
+   public static void Prime(int endNum, ArrayList<Integer> prime) {
+     if(endNum >= 2) {
+        prime.add(2); //소수 2 넣기        
+     }
+      
+      for(int i=2; i<=endNum; i++) { //입력 받은 endNum만큼 돌면서 소수 찾기
+         for(int j=0; j < prime.size(); j++) { //입력 된 소수 만큼 돌면서
+            if(i % prime.get(j) == 0) break; //지금 이건 Not 소수
+            if(j+1 == prime.size()) {   //소수일 때
+               prime.add(i);
+            }   
+         }
+      }
+   }
+   public static void main(String[] args) {
+      // TODO Auto-generated method stub
+      Scanner scan1 = new Scanner(System.in);
+      Scanner scan2 = new Scanner(System.in);
+      int num1 = scan1.nextInt();
+      int num2 = scan2.nextInt();
+      int hap = 0;
+      int a = 0;
+      int[] firstPrime = new int[num2+1];
+      ArrayList<Integer> prime = new ArrayList<Integer>();   
+      Prime(num2, prime);   //endNum이전까지의 소수 전부
+
+      for(int j=0; j<prime.size(); j++) {
+         if(num1 <= prime.get(j)) {
+            hap = hap + prime.get(j);
+            //System.out.println(prime.get(j)+"!!");
+            firstPrime[a] = prime.get(j);
+            a++;
+         }
+      }
+      
+      if(hap != 0) {
+         System.out.println(hap);
+         System.out.println(firstPrime[0]);           
+      }else {
+         System.out.println(-1);         
+      }
+   }
+}

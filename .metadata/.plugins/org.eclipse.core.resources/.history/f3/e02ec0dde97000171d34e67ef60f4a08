@@ -1,0 +1,9 @@
+package myspring.di.xml.test;
+
+import org.springframework.beans.factory.BeanFactory;
+
+public class HelloBeanJunitTest {
+	BeanFactory factory;
+	
+	
+}

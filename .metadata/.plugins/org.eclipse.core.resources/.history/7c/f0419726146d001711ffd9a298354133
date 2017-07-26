@@ -1,0 +1,47 @@
+package saddw;
+
+
+import java.util.Scanner;
+public class asdww {
+   public static int s[] = new int[10000];
+   
+   @SuppressWarnings("resource")
+   public static void main(String[] args) {
+      int N, i, num, top = 0; // 변수선언
+      
+      Scanner scane = new Scanner(System.in);
+      N = scane.nextInt();
+      for (i = 0; i < N; i++) {
+         String cmd; // 입력 값 변수
+         cmd = scane.next();
+         if (cmd.equals("push") == true) { // push
+            num = scane.nextInt();
+            s[top] = num;
+            top++;
+         }
+         if (cmd.equals("pop") == true) {// pop
+            if (top <= 0)
+               System.out.println("-1");
+            else {
+               System.out.println(s[top - 1]);
+               top--;
+            }
+         }
+         if (cmd.equals("size") == true) {// size
+            System.out.println(top);
+         }
+         if (cmd.equals("empty") == true) {// empty
+            if (top <= 0)
+               System.out.println("1");
+            else
+               System.out.println("0");
+         }
+         if (cmd.equals("top") == true) {// top
+            if (top <= 0)
+               System.out.println("-1");
+            else
+               System.out.println(s[top - 1]);
+         }
+      }
+   }
+}

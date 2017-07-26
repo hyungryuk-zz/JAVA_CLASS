@@ -1,0 +1,11 @@
+package myspring.di.xml;
+
+public class StringPrint implements Printer {
+
+	@Override
+	public void print(String message) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

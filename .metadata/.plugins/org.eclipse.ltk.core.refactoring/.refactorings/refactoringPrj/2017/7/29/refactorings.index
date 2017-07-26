@@ -1,0 +1,7 @@
+1500363382947	Extract superclass 'Printer'
+1500363749970	Extract method 'printing'
+1500363927117	Extract method 'printing'
+1500363938652	Extract method 'printing'
+1500364059702	Pull up members to 'Printer'
+1500365847660	Extract interface 'Printable'
+1500366134575	Extract Class...

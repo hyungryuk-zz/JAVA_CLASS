@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>학생정보 입력화면</title>
+</head>
+<body>
+	<h1>학생 정보 입력</h1>
+	<form method="POST" action="studentController">
+		학번 : <input type="number" name="studentId"><br>
+		이름 : <input type="text" name = "studentName"><br>
+		복수전공을 선택하세요<br>
+		<ul>
+		<li><input type ="checkbox" name ="major" value ="컴퓨터공학">컴퓨터공학</li>
+		<li><input type ="checkbox" name ="major" value ="공간정보공학">공간정보공학</li>
+		<li><input type ="checkbox" name ="major" value ="정보통신공학">정보통신공학</li>
+		<li><input type ="checkbox" name ="major" value ="신소재공학">신소재공학</li>
+		
+		</ul>
+		<input type="submit" value="등록">
+	</form>
+</body>
+</html>
