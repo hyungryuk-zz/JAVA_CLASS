@@ -1,5 +1,9 @@
 package Spring.Workshop01.annot;
 
-public interface SalaryDAO {
+import org.springframework.stereotype.Component;
 
+@Component
+public interface SalaryDAO {
+	public int getSalary(int snum);
+	public void saveSalaryDetail(SalaryVO detail);
 }

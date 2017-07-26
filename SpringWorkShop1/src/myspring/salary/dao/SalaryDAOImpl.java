@@ -2,9 +2,12 @@ package myspring.salary.dao;
 
 import java.util.Random;
 
+import org.springframework.stereotype.Component;
+
 import Spring.Workshop01.annot.SalaryDAO;
 import Spring.Workshop01.annot.SalaryVO;
 
+@Component
 public class SalaryDAOImpl implements SalaryDAO {
 
 	public int getSalary(int snum) {

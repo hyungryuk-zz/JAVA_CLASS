@@ -1,5 +1,8 @@
 package Spring.Workshop01.annot;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class SalaryVO {
 
 	private int snum;

@@ -13,10 +13,10 @@ import myspring.salary.service.SalaryServiceImpl;
 public class SalaryTest {
 	
 	@Autowired
-	SalaryServiceImpl salSer;
+	SalaryService salary;
 	
 	@Test
 	public void test() {
-		System.out.println(salSer.computeSalary(1001, 11));
+		System.out.println(salary.computeSalary(1001, 11));
 	}
 }

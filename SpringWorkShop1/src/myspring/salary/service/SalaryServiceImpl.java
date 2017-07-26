@@ -1,19 +1,24 @@
 package myspring.salary.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import Spring.Workshop01.annot.SalaryDAO;
 import Spring.Workshop01.annot.SalaryService;
 import Spring.Workshop01.annot.SalaryVO;
 import myspring.salary.dao.SalaryDAOImpl;
 
+@Component
 public class SalaryServiceImpl implements SalaryService {
 	
+	
 	@Autowired
-	private SalaryDAOImpl  dao;
+	private SalaryDAO  dao;
+	
+	@Autowired
+	SalaryVO detail;
 	
 	public SalaryVO computeSalary(int snum, int month){
-		
-		SalaryVO detail=new SalaryVO();
 		
 		int salary=dao.getSalary(snum);  	 //  연봉을 구해온다.
 		int mSalary=salary/12;	// 월급여를 구한다.

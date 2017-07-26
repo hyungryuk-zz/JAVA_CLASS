@@ -6,6 +6,8 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 
-	<bean id="salDao" class="myspring.salary.dao.SalaryDAOImpl" ></bean>
-	<bean id="salSer" class="myspring.salary.service.SalaryServiceImpl" ></bean>
+	<context:component-scan base-package="myspring.salary"/>
+	<context:component-scan base-package="Spring.Workshop01"/>
+<!-- 	<bean id="salDao" class="myspring.salary.dao.SalaryDAOImpl" ></bean> -->
+<!-- 	<bean id="salSer" class="myspring.salary.service.SalaryServiceImpl" ></bean> -->
 </beans>
