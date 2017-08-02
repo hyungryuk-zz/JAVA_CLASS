@@ -1,7 +1,11 @@
 package myspring.di.xml.test;
 
 
+import java.sql.Connection;
+import java.sql.SQLException;
+
 import javax.annotation.Resource;
+import javax.sql.DataSource;
 
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -29,12 +33,26 @@ public class HelloBeanSpringTest {
 	@Autowired
 	Hello helloC;
 	
+	@Autowired
+	DataSource dataSource;
 	
 	@Test
+	public void connection() {
+		
+		try {
+			Connection con = dataSource.getConnection();
+			System.out.println(con);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Test @Ignore
 	public void setCollection() {
 		hello.getNamesSet().stream().forEach(System.out::println);
 	}
-	@Test
+	@Test @Ignore
 	public void collection() {
 		hello.getNames().stream().forEach(System.out::println);
 	}

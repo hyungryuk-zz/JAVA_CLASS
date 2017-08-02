@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="config.usersMapper">
+	<resultMap id = "UserVOResultMap" type="UserVO">
+		<id property ="userid" column="myId" javaType="String" jdbcType="VARCHAR"/>
+		<result property="name" column="myName" javaType="String" jdbcType="VARCHAR"/>
+		<result property="gender" column="myGender" javaType="String" jdbcType="VARCHAR"/>
+		<result property="city" column="myCity" javaType="String" jdbcType="VARCHAR"/>
+		
+	</resultMap>
+	<select id="getUser" parameterType="String" resultMap="UserVOResultMap">
+		select 	userid myId,
+				name myName,
+				gender myGender,
+				city myCity 
+		from users where userid=#{haha}
+	</select>
+	
+	<select id="getUserList" resultType="UserVO">
+		select * from users
+	</select>
+	
+	<insert id="insertUser" parameterType="UserVO">
+		insert into users values (#{userid},#{name},#{gender},#{city})	
+	</insert>
+	
+	<update id="updateUser" parameterType="UserVO">
+		update users set userid=#{userid}, name=#{name}, gender=#{gender}, city=#{city} where userid=#{userid}
+	</update>
+</mapper>
