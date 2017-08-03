@@ -5,6 +5,13 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- component sacnning 설정 -->
+	<context:component-scan base-package="myspring.user">
+		<context:exclude-filter type="annotation" 
+			expression="org.springframework.stereotype.Controller"/> <!-- Controller쪽에서는 실행하지 않겠다 -->
+	</context:component-scan>
+
+
 	<!--  properties file 정보 설정 -->
 	<context:property-placeholder location="classpath:config/values.properties"/>
 
@@ -15,6 +22,7 @@
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:config/usersMapper.xml</value>
+				<value>classpath:config/EMpDeptMap.xml</value>
 			</list>
 		</property>
 	</bean>

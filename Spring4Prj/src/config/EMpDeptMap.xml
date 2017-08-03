@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="config.EMpDeptMap">
+	<resultMap id="EmpJoinsDept" type="myspring.user.vo.EmpVO">
+		<id property="empNO" column="empno" javaType="Integer" jdbcType="NUMERIC"/>
+		<result property="empName" column="ename" javaType="String" jdbcType="VARCHAR"/>
+		<result property="empJob" column="job" javaType="String" jdbcType="VARCHAR"/>
+		<result property="empMgr" column="mgr" javaType="Integer" jdbcType="NUMERIC"/>
+		<result property="empHireDate" column="hiredate" javaType="String" jdbcType="DATE"/>
+		<result property="empSal" column="sal" javaType="Float" jdbcType="NUMERIC"/>
+		<result property="empComm" column="comm" javaType="Float" jdbcType="NUMERIC"/>
+		<result property="dept.deptNo" column="deptno" javaType="Integer" jdbcType="NUMERIC"/>
+		<result property="dept.deptName" column="dname" javaType="String" jdbcType="VARCHAR"/>
+		
+		
+	</resultMap>
+	
+	<sql id="selectEmpDept">
+		select 	empno,
+				ename,
+				job,
+				e.mgr,
+				to_char(hiredate,'yyyy-mm-dd') hiredate,
+				sal,
+				comm,
+				d.deptno,
+				d.dname
+		from	emp e, dept d
+		where	e.deptno=d.deptno
+	</sql>
+	
+	<select id="selectEmpDeptByJob" parameterType="String" resultMap="EmpJoinsDept">
+		<include refid="selectEmpDept"/>
+		and job like '%' || #{jobname} ||'%'
+	</select>
+	
+	<select id="selectEmpDeptById" parameterType="String" resultMap="EmpJoinsDept">
+		<include refid="selectEmpDept"/>
+	</select>
+	
+	<select id="selectByHireDateorSal" parameterType="myspring.user.vo.EmpVO" resultMap="EmpJoinsDept">
+			select *
+			from emp
+			<where>
+				<if test="empHireDate!=null">
+					to_char(hiredate,'yyyy')=#{empHireDate}
+				</if>
+				<if test="empSal != null">
+					<![CDATA[			
+					or sal>=#{empSal}
+					]]>			
+				</if>
+			</where>
+		
+	</select>
+	
+	<insert id="insertEmp" parameterType="myspring.user.vo.EmpVO">
+		<selectKey keyProperty="empNO" resultType="Integer" order="BEFORE">
+			select emppno_seq.nextval from dual
+		</selectKey>
+			insert into emp (empno, ename, job, mgr, hiredate,sal,comm,deptno)
+			values (#{empNO},#{empName},#{empJob},#{empMgr},#{empHireDate}
+					,#{empSal},#{empComm},#{dept.deptNo})
+	</insert>
+</mapper>

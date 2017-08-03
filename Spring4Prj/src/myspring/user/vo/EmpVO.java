@@ -6,16 +6,30 @@ public class EmpVO {
    private String empJob;
    private Integer empMgr;
    private String empHireDate;
-   private float empSal;
-   private float empComm;
+   private Float empSal;
+   private Float empComm;
    private DeptVO dept;
    
    public EmpVO() {
       super();
    }
 
-   public EmpVO(Integer empNO, String empName, String empJob, Integer empMgr, String empHireDate, float empSal,
-         float empComm, DeptVO dept) {
+
+public EmpVO(String empName, String empJob, Integer empMgr, String empHireDate, Float empSal, Float empComm,
+		DeptVO dept) {
+	super();
+	this.empName = empName;
+	this.empJob = empJob;
+	this.empMgr = empMgr;
+	this.empHireDate = empHireDate;
+	this.empSal = empSal;
+	this.empComm = empComm;
+	this.dept = dept;
+}
+
+
+public EmpVO(Integer empNO, String empName, String empJob, Integer empMgr, String empHireDate, Float empSal,
+         Float empComm, DeptVO dept) {
       super();
       this.empNO = empNO;
       this.empName = empName;
@@ -63,19 +77,19 @@ public class EmpVO {
       this.empHireDate = empHireDate;
    }
 
-   public float getEmpSal() {
+   public Float getEmpSal() {
       return empSal;
    }
 
-   public void setEmpSal(float empSal) {
+   public void setEmpSal(Float empSal) {
       this.empSal = empSal;
    }
 
-   public float getEmpComm() {
+   public Float getEmpComm() {
       return empComm;
    }
 
-   public void setEmpComm(float empComm) {
+   public void setEmpComm(Float empComm) {
       this.empComm = empComm;
    }
 
@@ -92,8 +106,7 @@ public class EmpVO {
       return "EmpVO [empNO=" + empNO + ", empName=" + empName + ", empJob=" + empJob + ", empMgr=" + empMgr
             + ", empHireDate=" + empHireDate + ", empSal=" + empSal + ", empComm=" + empComm + ", dept=" + dept
             + "]";
-   }
-   
+   }   
    
    
 }

@@ -27,4 +27,8 @@
 	<update id="updateUser" parameterType="UserVO">
 		update users set userid=#{userid}, name=#{name}, gender=#{gender}, city=#{city} where userid=#{userid}
 	</update>
+	
+	<delete id="deleteUser" parameterType="String">
+		delete from users where userid=#{userid}
+	</delete>
 </mapper>

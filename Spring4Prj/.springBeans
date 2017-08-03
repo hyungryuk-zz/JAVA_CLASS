@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/config/beans.xml</config>
 		<config>src/config/annot.xml</config>
+		<config>src/config/beans-web.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

@@ -4,6 +4,10 @@ public class DeptVO {
 	private Integer deptNo;
 	private String deptName;
 	private String deptLoc;
+	public DeptVO(Integer deptNo) {
+		super();
+		this.deptNo = deptNo;
+	}
 	public Integer getDeptNo() {
 		return deptNo;
 	}
